@@ -118,7 +118,7 @@ int SickTimCommonTcp::init_device()
     {
         ROS_FATAL("Could not connect to host %s:%s", hostname_.c_str(), port_.c_str());
         diagnostics_.broadcast(diagnostic_msgs::DiagnosticStatus::ERROR, "Could not connect to host.");
-        return ExitError;
+        return ExitFatal;
     }
 
     input_buffer_.consume(input_buffer_.size());
